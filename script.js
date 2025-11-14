@@ -11,7 +11,7 @@ async function CargarModelo() {
     
     try {
         // Carga el modelo desde la carpeta 'modelo_web'
-        model = await tf.loadLayersModel('modelo_web/model.json');
+        model = await tf.loadLayersModel('modelo_web/model.json?v=2');
         
         // Carga el archivo de configuración JSON
         const response = await fetch('model_config.json');
@@ -116,4 +116,5 @@ async function predecir() {
         resultadoEl.style.color = "red";
         console.error(error);
     }
+
 }
